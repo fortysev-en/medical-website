@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <title>Med Routine | Medicine</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">
+            <img src="../assests/health_alt.svg" alt="Med Routine Logo" class="nav-logo-img"/>
+            <h2 class="logo-txt">MED ROUTINE</h2>
+        </div>
+        <div class="nav-options">
+            <a href="/" class="nav-buttons">Home</a>
+            <a href="../pages/about.html" class="nav-buttons">About</a>
+            <a href="../pages/contact.html" class="nav-buttons">Contact</a>
+            <a href="../pages/login.html" class="nav-buttons" id="login">Login</a>
+            <a href="../pages/dashboard.html" class="nav-buttons" id="dashboard">DASHBOARD</a>
+            <a class="nav-buttons" id="logout" onclick="handleLogout()">Logout</a>
+            <a href="../pages/signup.html" class="nav-buttons" id="signup">SignUp</a>
+        </div>
+    </nav>
+
+    <article>
+       <div class="medicine-article">
+            <!-- <input placeholder="Search"/> -->
+            <div class="medicine-list">
+                <div class="medicine-card">
+                    <div class="medicine-img-div">
+                        <img src="../assests/dolo.webp" alt="Dolo"/>
+                    </div>
+                            <h3>Dolo 650 Tablet</h3>
+                        <p>
+                            DOLO 650MG TABLET contains Paracetamol which belongs to the group of medicines called Analgesics and Antipyretics. It is used to relieve mild to moderate pain (including headaches, backache, toothache, severe nerve pain, sore throat, period pain).
+                        </p>
+                        <div class="medicine-ul">
+                            <ul>
+                                <li>15 Tablet(s) in a Strip</li>
+                                <li>Mkt: Micro Labs Ltd</li>
+                                <li>Country of Origin: India</li>
+                            </ul>
+                        </div>
+                        <div class="book">
+                            <h2>₹ 30.10</h2>
+                            <button onclick="handleBuy('Dolo 650 Tablet', '30.10')">BUY</button>
+                        </div>
+                </div>
+                <div class="medicine-card">
+                    <div class="medicine-img-div">
+                        <img src="../assests/cofsils.jpg" alt="Cofsils"/>
+                    </div>
+                            <h3>Cofsils Lozenges - Orange</h3>
+                        <p>
+                            Say goodbye to those irritating tickles in your throat and welcome the cool, refreshing sensation of Lozenges. Formulated to provide instant relief, these lozenges are packed with a unique blend of natural ingredients that lets you breathe easy.
+
+                        </p>
+                        <div class="medicine-ul">
+                            <ul>
+                                <li>10 Tablet(s) in a Strip</li>
+                                <li>Mkt: Cipla Ltd</li>
+                                <li>Country of Origin: India</li>
+                            </ul>
+                        </div>
+                        <div class="book">
+                            <h2>₹ 25.41</h2>
+                            <button onclick="handleBuy('Cofsils Lozenges - Orange', '25.41', 'medicine')">BUY</button>
+                        </div>
+                </div>
+                <div class="medicine-card">
+                    <div class="medicine-img-div">
+                        <img src="../assests/viks.jpg" alt="Viks"/>
+                    </div>
+                            <h3>Vicks 3-in-1 Cough-Nose-Throat</h3>
+                        <p>
+                            Vicks 3-in-1 Cough-Nose-Throat Lozenges! This product is the ultimate choice when it comes to throat, nose, and cough relief. Containing a powerful combination of menthol and vitamin C that lasts up to eight hours.
+
+                        </p>
+                        <div class="medicine-ul">
+                            <ul>
+                                <li>This product cannot be returned for a refund or exchange.</li>
+                                <li>Mkt: Procter & Gamble Hygiene And Health Care Limited</li>
+                                <li>Country of Origin: India</li>
+                            </ul>
+                        </div>
+                        <div class="book">
+                            <h2>₹ 39.01</h2>
+                            <button onclick="handleBuy('Vicks 3-in-1 Cough-Nose-Throat', '39.01', 'medicine')">BUY</button>
+                        </div>
+                </div>
+                <div class="medicine-card">
+                    <div class="medicine-img-div">
+                        <img src="../assests/move.jpg" alt="Move"/>
+                    </div>
+                            <h3>Moov Pain Relief Specialist Cream 50 gm
+                            </h3>
+                        <p>
+                            This analgesic (or pain-relieving) cream is a First Aid Kit must-have, with a special formula fortified with the power of "Four Active Ingredients". These penetrate deep inside to produce warmth that relaxes the muscles and help you recover fast.
+
+                        </p>
+                        <div class="medicine-ul">
+                            <ul>
+                                <li>This product cannot be returned for a refund or exchange.</li>
+                                <li>Mkt: Reckitt Benckiser Healthcare India Private Limited</li>
+                                <li>Country of Origin: India</li>
+                            </ul>
+                        </div>
+                        <div class="book">
+                            <h2>₹ 52.01</h2>
+                            <button onclick="handleBuy('Moov Pain Relief Specialist Cream 50 gm', '52.01', 'medicine')">BUY</button>
+                        </div>
+                </div>
+               
+                
+                
+            </div>
+       </div>
+    </article>
+    
+    <footer>
+        <div class="footer-location-left">
+            <div class="footer-location-left-overlay"></div>
+            <div class="nav-logo">
+                <img src="../assests/health_alt.svg" alt="Med Routine Logo" class="nav-logo-img"/>
+                <h2 class="logo-txt">MED ROUTINE</h2>
+            </div>
+            <h4>Empower your medical health with confidence and care!</h4>
+            <div class="footer-social">
+                <a href="/" target="_blank">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="/" target="_blank">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="/" target="_blank">
+                    <i class="bi bi-twitter-x"></i>
+                </a>
+                <a href="/" target="_blank">
+                    <i class="bi bi-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-location-right"></div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

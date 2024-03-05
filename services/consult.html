@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <title>Med Routine | Consult</title>
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-logo">
+            <img src="../assests/health_alt.svg" alt="Med Routine Logo" class="nav-logo-img"/>
+            <h2 class="logo-txt">MED ROUTINE</h2>
+        </a>
+        <div class="nav-options">
+            <a href="/" class="nav-buttons">Home</a>
+            <a href="../pages/about.html" class="nav-buttons">About</a>
+            <a href="../pages/contact.html" class="nav-buttons">Contact</a>
+            <a href="../pages/login.html" class="nav-buttons" id="login">Login</a>
+            <a href="../pages/dashboard.html" class="nav-buttons" id="dashboard">DASHBOARD</a>
+            <a class="nav-buttons" id="logout" onclick="handleLogout()">Logout</a>
+            <a href="../pages/signup.html" class="nav-buttons" id="signup">SignUp</a>
+        </div>
+    </nav>
+
+    <article>
+       <div class="consult-article">
+            <!-- <input placeholder="Search"/> -->
+            <div class="consultation-list">
+                <div class="consultation-card">
+                    <div class="consultation-card-content-left">
+                        <img src="../assests/narain.jpg" alt="Cardiologist" class="doctors-img"/>
+                    </div>
+                    <div class="consultation-card-content-right">
+                        <div class="doctors-info">
+                            <h3>Dr. Sunita Narain</h3>
+                            <h5><i>Obstetrician and Gynecologist</i></h5>
+                            <p>Dr. Sunita Narain is a highly skilled obstetrician and gynecologist known for her compassionate care and expertise in women's health. She has extensive experience in managing pregnancy, childbirth, and various gynecological conditions. Dr. Narain is committed to promoting women's health awareness.
+                            </p>
+                            <div class="book-btn">
+                                <h2>₹ 399</h2>
+                                <button onclick="handleBuy('Dr. Sunita Narain', '399', 'consultation')">BOOK NOW</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="consultation-card">
+                    <div class="consultation-card-content-left">
+                        <img src="../assests/devi.jpg" alt="Cardiologist" class="doctors-img"/>
+                    </div>
+                    <div class="consultation-card-content-right">
+                        <div class="doctors-info">
+                            <h3>Dr. Devi Prasad Shetty</h3>
+                            <h5><i>Cardiologist</i></h5>
+                            <p>Dr. Devi Prasad Shetty is a renowned cardiologist and the founder of Narayana Health, a chain of multi specialty hospitals in India. He is known for his expertise in cardiac care and has pioneered several innovative approaches to make heart care more affordable and accessible to the masses.</p>
+                            <div class="book-btn">
+                                <h2>₹ 599</h2>
+                                <button onclick="handleBuy('Dr. Devi Prasad Shetty', '599', 'consultation')">BOOK NOW</button>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="consultation-card">
+                    <div class="consultation-card-content-left">
+                        <img src="../assests/soin.png" alt="Cardiologist" class="doctors-img"/>
+                    </div>
+                    <div class="consultation-card-content-right">
+                        <div class="doctors-info">
+                            <h3>Dr. A. S. Soin</h3>
+                            <h5><i>Hepatologist (Liver Specialist)</i></h5>
+                            <p>Dr. A. S. Soin is a leading hepatologist with vast experience in liver transplantation and management of liver diseases. He is the Chairman of the Institute of Liver Transplantation and Regenerative Medicine at Medanta - The Medicity, Gurgaon, and has performed numerous successful liver transplants in India.
+                            </p>
+                            <div class="book-btn">
+                                <h2>₹ 499</h2>
+                                <button onclick="handleBuy('Dr. A. S. Soin', '499', 'consultation')">BOOK NOW</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="consultation-card">
+                    <div class="consultation-card-content-left">
+                        <img src="../assests/shaw.jpg" alt="Cardiologist" class="doctors-img"/>
+                    </div>
+                    <div class="consultation-card-content-right">
+                        <div class="doctors-info">
+                            <h3>Dr. Kiran Mazumdar-Shaw</h3>
+                            <h5><i>Oncologist</i></h5>
+                            <p>Dr. Kiran Mazumdar-Shaw is a renowned oncologist and the founder of Biocon Limited, a leading biopharmaceutical company in India. She is known for her pioneering work in cancer research and her efforts to make cancer treatment more accessible and affordable.
+                            </p>
+                            <div class="book-btn">
+                                <h2>₹ 799</h2>
+                                <button onclick="handleBuy('Dr. Kiran Mazumdar-Shaw', '799', 'consultation')">BOOK NOW</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="consultation-card">
+                    <div class="consultation-card-content-left">
+                        <img src="../assests/bhat.webp" alt="Cardiologist" class="doctors-img"/>
+                    </div>
+                    <div class="consultation-card-content-right">
+                        <div class="doctors-info">
+                            <h3>Dr. Naresh Bhat</h3>
+                            <h5><i>Endocrinologist (Haromonal Specialist)</i></h5>
+                            <p>Dr. Naresh Bhat is a highly respected endocrinologist with expertise in the management of hormonal disorders. He is known for his comprehensive approach to diabetes care and has played a key role in promoting awareness about endocrine disorders in India.
+                            </p>
+                            <div class="book-btn">
+                                <h2>₹ 359</h2>
+                                <button onclick="handleBuy('Dr. Naresh Bhat', '359', 'consultation')">BOOK NOW</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="consultation-card">
+                    <div class="consultation-card-content-left">
+                        <img src="../assests/chaubey.webp" alt="Cardiologist" class="doctors-img"/>
+                    </div>
+                    <div class="consultation-card-content-right">
+                        <div class="doctors-info">
+                            <h3>Dr. Pradeep Chowbey</h3>
+                            <h5><i>Gastroenterologist</i></h5>
+                            <p>Dr. Pradeep Chowbey is a renowned gastroenterologist known for his expertise in advanced laparoscopic and bariatric surgeries. He is the Chairman of the Department of Minimal Access, Metabolic and Bariatric Surgery at Max Healthcare, Delhi, and has received numerous awards for his contributions to the field of gastroenterology.
+                            </p>
+                            <div class="book-btn">
+                                <h2>₹ 459</h2>
+                                <button onclick="handleBuy('Dr. Pradeep Chowbey', '459', 'consultation')">BOOK NOW</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </article>
+    
+    <footer>
+        <div class="footer-location-left">
+            <div class="footer-location-left-overlay"></div>
+            <div class="nav-logo">
+                <img src="../assests/health_alt.svg" alt="Med Routine Logo" class="nav-logo-img"/>
+                <h2 class="logo-txt">MED ROUTINE</h2>
+            </div>
+            <h4>Empower your medical health with confidence and care!</h4>
+            <div class="footer-social">
+                <a href="/" target="_blank">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="/" target="_blank">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="/" target="_blank">
+                    <i class="bi bi-twitter-x"></i>
+                </a>
+                <a href="/" target="_blank">
+                    <i class="bi bi-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-location-right"></div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <title>Med Routine | Order</title>
+</head>
+<body onload="getParams()">
+
+    <script>
+        let addressFormData = ''
+        $(document).ready(function(){
+            $('#addressForm').submit(function(e){
+                e.preventDefault();
+                addressFormData = $(this).serialize();
+                document.getElementById("myModal").style.display = "block"
+            });
+        });
+
+        $(document).ready(function(){
+            $('#paymentForm').submit(function(e){
+                e.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: '../php/orders.php',
+                    data: addressFormData,
+                    success: function(response){
+                        alert(response);
+                        $('#paymentForm')[0].reset();
+                        $('#addressForm')[0].reset();
+                        modal = document.getElementById("myModal");
+                        modal.style.display = "none";
+                        window.location.href = "/pages/dashboard.html"
+                    }
+                });
+            });
+        });
+    </script>
+
+    <nav>
+        <a href="/" class="nav-logo">
+            <img src="../assests/health_alt.svg" alt="Med Routine Logo" class="nav-logo-img"/>
+            <h2 class="logo-txt">MED ROUTINE</h2>
+        </a>
+        <div class="nav-options">
+            <a href="/" class="nav-buttons">Home</a>
+            <a href="about.html" class="nav-buttons">About</a>
+            <a href="contact.html" class="nav-buttons">Contact</a>
+            <a class="nav-buttons" id="login">Login</a>
+            <a href="dashboard.html" class="nav-buttons" id="dashboard">DASHBOARD</a>
+            <a class="nav-buttons" id="logout" onclick="handleLogout()">Logout</a>
+            <a class="nav-buttons" id="signup">SignUp</a>
+        </div>
+    </nav>
+
+    <article>
+        <div class="order-article">
+            <h1><span class="highlight">Order</span> Confirmation</h1>
+            <div class="order-details">
+                <div class="order">
+                    <h2 id="productID"></h2>
+                    <h5><i id="productType"></i></h5>
+                    <h2 id="productPrice"></h2>
+                    <h5><i id="priceBreakup"></i></h5>
+                </div>
+                <form id="addressForm">
+                    <input type="hidden" value="" name="email" id="email">
+                    <input type="hidden" value="" name="order_name" id="order_name">
+                    <input type="hidden" value="" name="amount" id="order_amount">
+                    <div id="datetime">
+                        <label for="datetime">Select Date and Time for appointment: </label>
+                        <input type="datetime-local" name="order_datetime" id="order_datetime" novalidate/>
+                    </div>
+                    <button type="submit">PAY AND CONFIRM</button>
+                </form>
+            </div>
+        </div>
+    </article>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">x</span>
+          <h2>Payment Details</h2>
+          <form id="paymentForm">
+            <input type="number" id="cardNumber" name="cardNumber" placeholder="Card Number" required>
+            <div class="form-field-split">
+                <input type="date" id="expiryDate" name="expiryDate" placeholder="Expiry" required>
+                <input type="number" id="cvv" name="cvv" placeholder="CVV" required>
+            </div>
+            <input type="text" id="cardName" name="cardName" placeholder="Name On The Card" required>
+            <button type="submit" id="confirmPaymentBtn">Confirm Payment</button>
+          </form>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-location-left">
+            <div class="footer-location-left-overlay"></div>
+            <a href="/" class="nav-logo">
+                <img src="../assests/health_alt.svg" alt="Med Routine Logo" class="nav-logo-img"/>
+                <h2 class="logo-txt">MED ROUTINE</h2>
+            </a>
+            <h4>Empower your medical health with confidence and care!</h4>
+            <div class="footer-social">
+                <a href="/" target="_blank">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="/" target="_blank">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="/" target="_blank">
+                    <i class="bi bi-twitter-x"></i>
+                </a>
+                <a href="/" target="_blank">
+                    <i class="bi bi-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-location-right"></div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

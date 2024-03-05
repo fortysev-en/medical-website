@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <title>Med Routine | Login</title>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $('#loginForm').submit(function(e){
+                e.preventDefault();
+                const formData = $(this).serialize();
+                const email = document.getElementById('email').value
+                $.ajax({
+                    type: 'POST',
+                    url: '../php/login.php',
+                    data: formData,
+                    success: function(response){
+                        if(response === 'success') {
+                            localStorage.setItem('authenticated', email)
+                            window.location.href = '/pages/dashboard.html'; 
+                        } else {
+                            alert('Invalid email/password')
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <nav>
+        <a href="/" class="nav-logo">
+            <img src="../assests/health_alt.svg" alt="Med Routine Logo" class="nav-logo-img"/>
+            <h2 class="logo-txt">MED ROUTINE</h2>
+        </a>
+        <div class="nav-options">
+            <a href="../index.html" class="nav-buttons">Home</a>
+            <a href="about.html" class="nav-buttons">About</a>
+            <a href="contact.html" class="nav-buttons">Contact</a>
+            <div class="login-signup-div">
+                <a class="nav-buttons active" id="login">Login</a>
+                <a class="nav-buttons" id="logout">Logout</a>
+                <a href="signup.html" class="nav-buttons" id="signup">SignUp</a>
+            </div>
+        </div>
+    </nav>
+
+    <article>
+       <div class="login-article">
+            <h1><span class="highlight">Log</span>In</h1>
+            <form id="loginForm">
+                <input placeholder="Email Address" type="email" name="email" id="email" required/>
+                <input placeholder="Password" type="password" name="password" required/>
+                <button type="submit">LOGIN</button>
+            </form>
+            <h4>Don't have an account? <a href="signup.html">Signup</a></h4>
+        </div>
+    </article>
+    
+    <footer>
+        <div class="footer-location-left">
+            <div class="footer-location-left-overlay"></div>
+            <a href="/" class="nav-logo">
+                <img src="../assests/health_alt.svg" alt="Med Routine Logo" class="nav-logo-img"/>
+                <h2 class="logo-txt">MED ROUTINE</h2>
+            </a>
+            <h4>Empower your medical health with confidence and care!</h4>
+            <div class="footer-social">
+                <a href="/" target="_blank">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="/" target="_blank">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="/" target="_blank">
+                    <i class="bi bi-twitter-x"></i>
+                </a>
+                <a href="/" target="_blank">
+                    <i class="bi bi-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-location-right"></div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

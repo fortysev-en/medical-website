@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <title>Med Routine | Labtest</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">
+            <img src="../assests/health_alt.svg" alt="Med Routine Logo" class="nav-logo-img"/>
+            <h2 class="logo-txt">MED ROUTINE</h2>
+        </div>
+        <div class="nav-options">
+            <a href="/" class="nav-buttons">Home</a>
+            <a href="../pages/about.html" class="nav-buttons">About</a>
+            <a href="../pages/contact.html" class="nav-buttons">Contact</a>
+            <a href="../pages/login.html" class="nav-buttons" id="login">Login</a>
+            <a href="../pages/dashboard.html" class="nav-buttons" id="dashboard">DASHBOARD</a>
+            <a class="nav-buttons" id="logout" onclick="handleLogout()">Logout</a>
+            <a href="../pages/signup.html" class="nav-buttons" id="signup">SignUp</a>
+        </div>
+    </nav>
+
+    <article>
+       <div class="lab-article">
+            <!-- <input placeholder="Search"/> -->
+            <div class="lab-list">
+                <div class="labtest-card">
+                    <h3>Lipid Profile</h3>
+                    <p>
+                        A lipid profile is a blood test that measures the levels of cholesterol and triglycerides in the blood. It provides valuable information about a person's risk of developing heart disease and other cardiovascular conditions. 
+                    </p>
+                    <div class="book">
+                        <h2>₹ 749</h2>
+                        <button onclick="handleBuy('Lipid Profile', '749', 'labtest')">BOOK NOW</button>
+                    </div>
+                </div>
+                <div class="labtest-card">
+                    <h3>Liver Function Test</h3>
+                    <p>
+                        A lipid profile is a blood test that measures the levels of cholesterol and triglycerides in the blood. It provides valuable information about a person's risk of developing heart disease and other cardiovascular conditions. 
+                    </p>
+                    <div class="book">
+                        <h2>₹ 199</h2>
+                        <button onclick="handleBuy('Liver Function Test', '199', 'labtest')">BOOK NOW</button>
+                    </div>
+                </div>
+                <div class="labtest-card">
+                    <h3>Blood Glucose Test</h3>
+                    <p>
+                        The blood glucose test measures the level of glucose (sugar) in the blood. It is commonly used to diagnose and monitor diabetes, a condition characterized by high blood sugar levels.
+                    </p>
+                    <div class="book">
+                        <h2>₹ 299</h2>
+                        <button onclick="handleBuy('Blood Glucose Test', '299', 'labtest')">BOOK NOW</button>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </article>
+    
+    <footer>
+        <div class="footer-location-left">
+            <div class="footer-location-left-overlay"></div>
+            <div class="nav-logo">
+                <img src="../assests/health_alt.svg" alt="Med Routine Logo" class="nav-logo-img"/>
+                <h2 class="logo-txt">MED ROUTINE</h2>
+            </div>
+            <h4>Empower your medical health with confidence and care!</h4>
+            <div class="footer-social">
+                <a href="/" target="_blank">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="/" target="_blank">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="/" target="_blank">
+                    <i class="bi bi-twitter-x"></i>
+                </a>
+                <a href="/" target="_blank">
+                    <i class="bi bi-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-location-right"></div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
